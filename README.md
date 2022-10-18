@@ -3,8 +3,12 @@
 ## Description
 This is an Command Line application to allow users to create a detailed ReadMe file
 
-## License
 
+## Screenshots
+![Read Me Generator Screenshot](./assets/read-me-screenshot-1.png)
+![Read Me Generator Screenshot](./assets/read-me-screenshot-2.png)
+
+## License
 MIT License
 
 Copyright (c) 2022 Daniel Vidal

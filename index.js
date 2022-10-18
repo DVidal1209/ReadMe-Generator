@@ -23,7 +23,7 @@ const questions = [
 // Function to create the Read Me File
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data,  (err)=>
-    err ? console.err(err) : console.log("README.md successfully generated"))
+    err ? console.err(err) : console.log("Your file was successfully generated"))
 }
 
 // TODO: Create a function to initialize app
@@ -1045,12 +1045,11 @@ PERFORMANCE OF THIS SOFTWARE.`,
             // Text for readme file
             let readme = `## ${response.name}
 
-${selectedLicense.badge}
-
 # Description
 
-${response.description}
+${selectedLicense.badge}
 
+${response.description}
 ${tableOfContent}
 
 # Installation
