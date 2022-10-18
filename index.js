@@ -5,14 +5,17 @@ const moment = require("moment");
 const year = moment().format("yyyy");
 
 // TODO: Create an array of questions for user input
-const questions = [ // 0- title, 1- description, 2 - how to install application, 3 - usage, 4 - collaborators, 5- License, 6 - Full Name
+// 0- title, 1- description, 2 - how to install application, 3 - usage, 4 - collaborators, 5- License, 6 - Full Name, 7 - File Name, 8 - Yes or No Collaborators
+const questions = [ 
     "What is the Title of your project",
     "Give a Description for this project",
     "How do you install this applicaation?",
     "How is this application used?",
     "List the collaborators for this application",
     "What kind of License do you want?",
-    "What is your full name?"
+    "What is your full name?",
+    "What would you like to name the generated file?", 
+    "Are there any other collaborators for this project?"
 ];
 
 // TODO: Create a function to write README file
@@ -51,19 +54,56 @@ function init() {
                 type: "input"
             },
             {
+              name: "yesNo",
+              message: questions[8],
+              type: 'list',
+              choices: ["Yes", "No"]
+            },
+            {
                 name: "collab",
                 message: questions[4],
-                type: "input"
+                type: "input",
+                when: (answers) => answers.yesNo === "Yes"
             },
             {
                 name: "license",
                 message: questions[5],
                 type: "list",
                 choices: ['MIT License', 'Apache License 2.0', 'GNU General Public License v3.0', 'ISC License']
+            },
+            {
+              name: "filename",
+                message: questions[7],
+                type: "input"
             }
         ])
         .then((response) => {
             let selectedLicense;
+            if (response.yesNo === "Yes"){
+              var credits = `# Credits
+
+${response.collab}`;
+              var tableOfContent = `# Table of Content
+[Description](#description)
+
+[Installation](#installation)
+
+[Usage](#usage)
+
+[Credits](#credits)
+
+[License](#license)`
+            } else {
+              var credits = ""; 
+              var tableOfContent = `# Table of Content
+[Description](#description)
+
+[Installation](#installation)
+
+[Usage](#usage)
+
+[License](#license)`
+            }
             switch(response.license){
                 case 'MIT License':
                     selectedLicense = {
@@ -1006,17 +1046,7 @@ ${selectedLicense.badge}
 
 ${response.description}
 
-# Table of Content
-[Description](#description)
-
-[Installation](#installation)
-
-[Usage](#usage)
-
-[Creadits](#credits)
-
-[License](#license)
-
+${tableOfContent}
 
 # Installation
 
@@ -1026,23 +1056,16 @@ ${response.install}
 
 ${response.usage}
 
-# Credits
-
-${response.collab}
+${credits}
 
 # License
 
 ${selectedLicense.description}
 `
-                writeToFile("README.md", readme);
-                
-            console.log(response.name);
-            console.log(response.description);
-            console.log(response.install);
-            console.log(response.usage);
-            console.log(response.collab);
-            console.log(response.license);
-            console.log(year);
+
+
+                let fileName = response.filename + ".md";
+                writeToFile(fileName, readme);
         })
 }
 
