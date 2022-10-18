@@ -1,11 +1,13 @@
 # ReadMe-Generator
 
 ## Description
-This is an Command Line application to allow users to create a detailed ReadMe file
+This is an Command Line application to allow users to create a detailed ReadMe file.
 
+Link to video on how to use: [Video Link](https://drive.google.com/file/d/1hIVas6-zOYIMw9RJsPeAi588SUYnH6Ws/view)
 
 ## Screenshots
 ![Read Me Generator Screenshot](./assets/read-me-screenshot-1.png)
+
 ![Read Me Generator Screenshot](./assets/read-me-screenshot-2.png)
 
 ## License
