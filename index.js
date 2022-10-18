@@ -84,9 +84,11 @@ function init() {
         .then((response) => {
             // Creation of Table of Contents under the condition of if there are other collaborators
             if (response.yesNo === "Yes"){
-              var credits = `# Credits
+              var credits = `
+              # Credits
 
-${response.collab}`;
+${response.collab}
+`;
               var tableOfContent = `# Table of Content
 [Installation](#installation)
 
@@ -96,7 +98,8 @@ ${response.collab}`;
 
 [License](#license)`
             } else {
-              var credits = ""; 
+              var credits = `
+              `; 
               var tableOfContent = `# Table of Content
 [Installation](#installation)
 
@@ -1057,9 +1060,7 @@ ${response.install}
 # Usage
 
 ${response.usage}
-
 ${credits}
-
 # License
 
 ${selectedLicense.description}
