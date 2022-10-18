@@ -5,6 +5,7 @@ const moment = require("moment");
 const year = moment().format("yyyy");
 
 // TODO: Create an array of questions for user input
+// description of each question at each pointer
 // 0- title, 1- description, 2 - how to install application, 3 - usage, 4 - collaborators, 5- License, 6 - Full Name, 7 - File Name, 8 - Yes or No Collaborators
 const questions = [ 
     "What is the Title of your project",
@@ -19,6 +20,7 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
+// Function to create the Read Me File
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data,  (err)=>
     err ? console.err(err) : console.log("README.md successfully generated"))
@@ -27,6 +29,7 @@ function writeToFile(fileName, data) {
 // TODO: Create a function to initialize app
 function init() {
     inquirer
+    // Questions asked using inquirer
         .prompt([
             {
                 name: 'fullname',
@@ -77,8 +80,9 @@ function init() {
                 type: "input"
             }
         ])
+        // What is done with the response from the above questions
         .then((response) => {
-            let selectedLicense;
+            // Creation of Table of Contents under the condition of if there are other collaborators
             if (response.yesNo === "Yes"){
               var credits = `# Credits
 
@@ -100,6 +104,8 @@ ${response.collab}`;
 
 [License](#license)`
             }
+            // creation of information for the license selected 
+            let selectedLicense;
             switch(response.license){
                 case 'MIT License':
                     selectedLicense = {
@@ -1033,7 +1039,7 @@ PERFORMANCE OF THIS SOFTWARE.`,
                     }
                     break;
             }             
-
+            // Text for readme file
             let readme = `## ${response.name}
 
 ${selectedLicense.badge}
@@ -1059,9 +1065,8 @@ ${credits}
 ${selectedLicense.description}
 `
 
-
-                let fileName = response.filename + ".md";
-                writeToFile(fileName, readme);
+            let fileName = response.filename + ".md";
+            writeToFile(fileName, readme);
         })
 }
 
