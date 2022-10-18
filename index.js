@@ -8,13 +8,13 @@ const year = moment().format("yyyy");
 // 0- title, 1- description, 2 - how to install application, 3 - usage, 4 - collaborators, 5- License, 6 - Full Name, 7 - File Name, 8 - Yes or No Collaborators
 const questions = [ 
     "What is the Title of your project",
-    "Give a Description for this project",
+    "Give a Description for this project.",
     "How do you install this applicaation?",
     "How is this application used?",
-    "List the collaborators for this application",
+    "List the collaborators for this application.",
     "What kind of License do you want?",
     "What is your full name?",
-    "What would you like to name the generated file?", 
+    "What would you like to name the generated readme file?", 
     "Are there any other collaborators for this project?"
 ];
 
@@ -84,8 +84,6 @@ function init() {
 
 ${response.collab}`;
               var tableOfContent = `# Table of Content
-[Description](#description)
-
 [Installation](#installation)
 
 [Usage](#usage)
@@ -96,8 +94,6 @@ ${response.collab}`;
             } else {
               var credits = ""; 
               var tableOfContent = `# Table of Content
-[Description](#description)
-
 [Installation](#installation)
 
 [Usage](#usage)
