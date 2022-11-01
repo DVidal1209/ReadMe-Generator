@@ -85,7 +85,7 @@ function init() {
             // Creation of Table of Contents under the condition of if there are other collaborators
             if (response.yesNo === "Yes"){
               var credits = `
-              # Credits
+# Credits
 
 ${response.collab}
 `;
