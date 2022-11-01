@@ -5,6 +5,20 @@ This is an Command Line application to allow users to create a detailed ReadMe f
 
 [Link to video on how to use](https://drive.google.com/file/d/1hIVas6-zOYIMw9RJsPeAi588SUYnH6Ws/view)
 
+
+# Installation
+
+The application is installed by extracting the zip file to the computer. Then you will need to open a command line / terminal to the folder containing the app and run the command npm install.
+
+In order to run this program you will need to have node installed on your computer.
+
+Node can be found [here](https://nodejs.org/en/download/)
+
+# Usage
+
+This application is ran by opening a cmd/terminal to the folder containing the app, then in the cmd/terminal run the command node index.js, then answer the prompts given in the cmd/terminal. Once done you will be asked to give the file a name.
+
+
 ## Screenshots
 ![Read Me Generator Screenshot](./assets/read-me-screenshot-1.png)
 
