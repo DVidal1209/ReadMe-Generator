@@ -3,7 +3,7 @@
 ## Description
 This is an Command Line application to allow users to create a detailed ReadMe file.
 
-Link to video on how to use: [Video Link](https://drive.google.com/file/d/1hIVas6-zOYIMw9RJsPeAi588SUYnH6Ws/view)
+[Link to video on how to use](https://drive.google.com/file/d/1hIVas6-zOYIMw9RJsPeAi588SUYnH6Ws/view)
 
 ## Screenshots
 ![Read Me Generator Screenshot](./assets/read-me-screenshot-1.png)
