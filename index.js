@@ -1,12 +1,11 @@
-// TODO: Include packages needed for this application
 const inquirer = require('inquirer');
 const fs = require("fs");
 const moment = require("moment");
 const year = moment().format("yyyy");
 
-// TODO: Create an array of questions for user input
 // description of each question at each pointer
-// 0- title, 1- description, 2 - how to install application, 3 - usage, 4 - collaborators, 5- License, 6 - Full Name, 7 - File Name, 8 - Yes or No Collaborators
+// 0- title, 1- description, 2 - how to install application, 3 - usage, 4 - collaborators,
+// 5- License, 6 - Full Name, 7 - File Name, 8 - Yes or No Collaborators
 const questions = [ 
     "What is the Title of your project",
     "Give a Description for this project.",
@@ -19,14 +18,13 @@ const questions = [
     "Are there any other collaborators for this project?"
 ];
 
-// TODO: Create a function to write README file
 // Function to create the Read Me File
 function writeToFile(fileName, data) {
     fs.writeFile(fileName, data,  (err)=>
     err ? console.err(err) : console.log("Your file was successfully generated"))
 }
 
-// TODO: Create a function to initialize app
+// Initialization function
 function init() {
     inquirer
     // Questions asked using inquirer
@@ -1070,5 +1068,5 @@ ${selectedLicense.description}
         })
 }
 
-// Function call to initialize app
+// Initialization function call
 init();
