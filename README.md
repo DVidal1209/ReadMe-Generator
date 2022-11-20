@@ -20,9 +20,9 @@ This application is ran by opening a cmd/terminal to the folder containing the a
 
 
 ## Screenshots
-![Read Me Generator Screenshot](./assets/read-me-screenshot-1.png)
+![Read Me Generator Screenshot](./assets/images/read-me-screenshot-1.png)
 
-![Read Me Generator Screenshot](./assets/read-me-screenshot-2.png)
+![Read Me Generator Screenshot](./assets/images/read-me-screenshot-2.png)
 
 ## License
 MIT License
